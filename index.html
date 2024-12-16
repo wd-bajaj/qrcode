@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code File Download</title>
+</head>
+<body>
+  <h1>QR Code for File Download</h1>
+  
+  <!-- QR Code will be displayed here -->
+  <div id="qrcode"></div>
+  
+  <!-- File Download Button -->
+  <a id="downloadLink" href="c5644485fc17d4fbd0d7bb543bb5a04a.jpg" download style="display:none;">Download File</a>
+
+  <!-- Include QRCode.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  
+  <script>
+    // File URL to be downloaded
+    const fileUrl = "c5644485fc17d4fbd0d7bb543bb5a04a.jpg";
+    
+    // Generate the QR code
+    const qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: fileUrl,
+      width: 200,
+      height: 200,
+    });
+
+    // Optional: Show a download button (for non-QR users)
+    const downloadLink = document.getElementById("downloadLink");
+    downloadLink.href = fileUrl;
+    downloadLink.style.display = "block";
+  </script>
+</body>
+</html>
